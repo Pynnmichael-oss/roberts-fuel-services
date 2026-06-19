@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Roberts Fuel Services — meet owner Garrison Roberts and learn about our experience, credentials, and commitment to reliable fuel delivery." />
+  <title>About | Roberts Fuel Services</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div id="avail-bar" class="avail-bar"></div>
+  <header id="site-nav" class="nav"></header>
+
+  <main>
+
+    <!-- ========================================================
+         PAGE HERO
+         ======================================================== -->
+    <section class="page-hero" aria-label="Page header">
+      <div class="page-hero__inner">
+        <span class="eyebrow">Who We Are</span>
+        <h1>About Roberts Fuel Services</h1>
+        <p>Oklahoma-based, owner-operated, and built on a simple promise: show up when you say you will.</p>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         OWNER BIO
+         ======================================================== -->
+    <section class="about-owner section" aria-label="Owner information">
+      <div class="container">
+        <div class="about-owner__layout">
+
+          <!-- Photo placeholder -->
+          <div class="about-owner__photo" aria-label="Photo of Garrison Roberts — placeholder">
+            <span aria-hidden="true">👤</span>
+            <span class="about-owner__photo-label">Photo<br>Coming Soon</span>
+          </div>
+
+          <!-- Bio text -->
+          <div class="about-owner__bio">
+            <span class="eyebrow">Owner &amp; Operator</span>
+            <h3 id="owner-name"><!-- injected --></h3>
+            <p id="owner-title" style="color:var(--muted);font-weight:600;margin-bottom:1rem;margin-top:0.2rem;"><!-- injected --></p>
+            <div id="owner-bio-paragraphs"><!-- injected --></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         CREDENTIALS / LICENSING
+         ======================================================== -->
+    <section class="credentials section" aria-label="Credentials and licensing">
+      <div class="container">
+        <span class="eyebrow" style="color:var(--wheat);">Licensed &amp; Compliant</span>
+        <h2>Credentials &amp; Qualifications</h2>
+        <ul class="credential-list" id="credential-list" style="margin-top:1.5rem;">
+          <!-- injected by JS -->
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SERVICE AREA SUMMARY
+         ======================================================== -->
+    <section class="section section--white" aria-label="Service area summary">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Coverage</span>
+          <h2>Where We Deliver</h2>
+          <p>We're based in Oklahoma and run fuel to job sites, farms, fleets, and commercial operations across the region.</p>
+        </div>
+
+        <div class="grid-3" style="margin-top:2rem;" id="coverage-cards">
+          <!-- injected by JS -->
+        </div>
+
+        <div style="margin-top:2.5rem; text-align:center;">
+          <a href="services.html" class="btn btn--green" style="margin-right:0.75rem;">View Coverage Map</a>
+          <a href="contact.html" class="btn" style="border:2px solid var(--saddle);color:var(--saddle);background:transparent;">Request a Quote</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         24/7 CTA BAND
+         ======================================================== -->
+    <section class="cta-band" aria-label="Call to action">
+      <div class="cta-band__inner">
+        <span class="eyebrow" style="color:rgba(255,255,255,0.6);">Day or Night</span>
+        <h2>Ready to Work With Us?</h2>
+        <p>Call us now to discuss your fuel delivery needs — or fill out a quote request and we'll get back to you promptly.</p>
+        <a href="#" class="cta-band__phone" id="about-phone"><!-- injected --></a>
+        <a href="contact.html" class="btn btn--primary">Request a Quote</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="site-footer" class="footer"></footer>
+
+  <script src="config.js"></script>
+  <script src="shared.js"></script>
+  <script>
+    initSite();
+
+    const cfg = window.SITE_CONFIG;
+
+    // Phone CTA
+    const ap = document.getElementById("about-phone");
+    ap.href        = "tel:" + cfg.phoneRaw;
+    ap.textContent = cfg.phone;
+
+    // Owner bio
+    document.getElementById("owner-name").textContent  = cfg.ownerName;
+    document.getElementById("owner-title").textContent = cfg.ownerTitle;
+
+    const bioContainer = document.getElementById("owner-bio-paragraphs");
+    cfg.ownerBio.forEach(function (para) {
+      const p = document.createElement("p");
+      p.textContent = para;
+      p.style.marginBottom = "0.85rem";
+      p.style.color = "var(--muted)";
+      bioContainer.appendChild(p);
+    });
+
+    // Credentials
+    const credList = document.getElementById("credential-list");
+    cfg.credentials.forEach(function (cred) {
+      const li = document.createElement("li");
+      li.textContent = cred;
+      credList.appendChild(li);
+    });
+
+    // Coverage state cards (from config)
+    const coverageCards = document.getElementById("coverage-cards");
+    cfg.coverageStates.forEach(function (s) {
+      const isPrimary = s.tier === "primary";
+      const card = document.createElement("div");
+      card.className = "card";
+      card.style.borderTop = "3px solid " + (isPrimary ? "var(--green)" : "var(--green-lt)");
+      card.innerHTML = `
+        <div style="font-size:1.5rem;margin-bottom:0.5rem;">${isPrimary ? "🏠" : "🚛"}</div>
+        <div class="card__title" style="color:var(--bark);">${s.label}</div>
+        <p class="card__desc">${s.note}</p>
+      `;
+      coverageCards.appendChild(card);
+    });
+  </script>
+
+</body>
+</html>
