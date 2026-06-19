@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700;900&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -45,10 +45,15 @@
       <div class="container">
         <div class="about-owner__layout">
 
-          <!-- Photo placeholder -->
-          <div class="about-owner__photo" aria-label="Photo of Garrison Roberts — placeholder">
-            <span aria-hidden="true">👤</span>
-            <span class="about-owner__photo-label">Photo<br>Coming Soon</span>
+          <!-- Owner headshot -->
+          <div class="about-owner__photo">
+            <img
+              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80"
+              alt="Garrison Roberts, Owner of Roberts Fuel Services"
+              loading="lazy"
+              width="200"
+              height="260"
+            />
           </div>
 
           <!-- Bio text -->
@@ -155,11 +160,9 @@
       const card = document.createElement("div");
       card.className = "card";
       card.style.borderTop = "3px solid " + (isPrimary ? "var(--green)" : "var(--green-lt)");
-      card.innerHTML = `
-        <div style="font-size:1.5rem;margin-bottom:0.5rem;">${isPrimary ? "🏠" : "🚛"}</div>
-        <div class="card__title" style="color:var(--bark);">${s.label}</div>
-        <p class="card__desc">${s.note}</p>
-      `;
+      card.innerHTML =
+        '<div class="card__title" style="color:var(--bark);">' + s.label + '</div>' +
+        '<p class="card__desc">' + s.note + '</p>';
       coverageCards.appendChild(card);
     });
   </script>
