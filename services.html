@@ -23,6 +23,14 @@
          PAGE HERO
          ======================================================== -->
     <section class="page-hero" aria-label="Page header">
+      <img
+        class="page-hero__bg"
+        src="https://images.unsplash.com/photo-1696583545294-a0158d7afa63?auto=format&fit=crop&w=1920&q=80"
+        alt=""
+        aria-hidden="true"
+        loading="eager"
+      />
+      <div class="page-hero__overlay" aria-hidden="true"></div>
       <div class="page-hero__inner">
         <span class="eyebrow">What We Do</span>
         <h1>Fuel Delivery Services</h1>
@@ -271,9 +279,11 @@
     // --------------------------------------------------------
     const container = document.getElementById("services-detail-container");
 
-    // Detailed content for each service (keyed to config service titles)
+    // Detailed content per service — includes a real Unsplash photo for each block
     const serviceDetails = {
       "Bulk Fuel Delivery": {
+        photo:    "https://images.unsplash.com/photo-1696583545294-a0158d7afa63?auto=format&fit=crop&w=900&q=80",
+        photoAlt: "Green fuel tanker truck driving on an open road",
         bullets: [
           "Diesel, gasoline, and specialty fuels",
           "Job sites, farms, and commercial facilities",
@@ -283,6 +293,8 @@
         extra: "We work with contractors, agricultural operations, energy companies, and commercial facilities throughout Oklahoma and surrounding states. Tell us what you need and where — we'll handle the rest."
       },
       "Emergency Dispatch": {
+        photo:    "https://images.unsplash.com/photo-1635681463939-dc861a9a42c9?auto=format&fit=crop&w=900&q=80",
+        photoAlt: "Semi truck driving down a road at night",
         bullets: [
           "True 24/7 availability — real person answers",
           "Emergency response for fuel-critical situations",
@@ -292,6 +304,8 @@
         extra: "When a fuel shortage threatens your timeline or operation, you don't want voicemail. We staff real dispatchers around the clock so you get a truck rolling, not a callback."
       },
       "Scheduled Programs": {
+        photo:    "https://images.unsplash.com/photo-1516199423456-1f1e91b06f25?auto=format&fit=crop&w=900&q=80",
+        photoAlt: "Oil pump jack silhouette against a dramatic red sunset sky",
         bullets: [
           "Automated recurring delivery schedules",
           "Never manually track tank levels again",
@@ -303,7 +317,7 @@
     };
 
     cfg.services.forEach(function (s, i) {
-      const detail  = serviceDetails[s.title] || { bullets: [], extra: "" };
+      const detail  = serviceDetails[s.title] || { photo: "", photoAlt: "", bullets: [], extra: "" };
       const reverse = i % 2 !== 0;
 
       const block = document.createElement("div");
@@ -313,19 +327,18 @@
         .map(function (b) { return "<li>" + b + "</li>"; })
         .join("");
 
-      block.innerHTML = `
-        <div class="service-block__text">
-          <span class="eyebrow">${s.icon} Service</span>
-          <h3>${s.title}</h3>
-          <p style="color:var(--muted);">${s.description}</p>
-          <ul class="service-block__list">${bulletsHTML}</ul>
-          ${detail.extra ? `<p style="color:var(--muted);margin-top:1rem;">${detail.extra}</p>` : ""}
-          <div style="margin-top:1.5rem;">
-            <a href="contact.html" class="btn btn--green">Get a Quote</a>
-          </div>
-        </div>
-        <div class="service-block__visual" aria-hidden="true">${s.icon}</div>
-      `;
+      block.innerHTML =
+        '<div class="service-block__text">' +
+          '<span class="eyebrow">' + s.title + '</span>' +
+          '<h3>' + s.title + '</h3>' +
+          '<p style="color:var(--muted);">' + s.description + '</p>' +
+          '<ul class="service-block__list">' + bulletsHTML + '</ul>' +
+          (detail.extra ? '<p style="color:var(--muted);margin-top:1rem;">' + detail.extra + '</p>' : '') +
+          '<div style="margin-top:1.5rem;"><a href="contact.html" class="btn btn--green">Get a Quote</a></div>' +
+        '</div>' +
+        '<div class="service-block__visual">' +
+          '<img src="' + detail.photo + '" alt="' + detail.photoAlt + '" loading="lazy" />' +
+        '</div>';
 
       container.appendChild(block);
     });

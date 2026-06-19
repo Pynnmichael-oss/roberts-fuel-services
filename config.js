@@ -31,7 +31,7 @@ const SITE_CONFIG = {
   //  FORMSPREE  (replace YOUR_FORMSPREE_ID with your form ID)
   //  Get yours free at https://formspree.io
   // ----------------------------------------------------------
-  formspreeId:    "YOUR_FORMSPREE_ID",
+  formspreeId:    "mwvjgvow",
 
   // ----------------------------------------------------------
   //  ABOUT PAGE — OWNER BIO

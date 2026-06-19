@@ -494,22 +494,42 @@ p {
 
 .hero {
   position: relative;
-  background: var(--bark);
+  background: var(--bark); /* fallback if photo fails to load */
   overflow: hidden;
   min-height: 580px;
   display: flex;
   align-items: center;
 }
 
-/* Dot-grid texture over entire hero */
+/* Full-bleed background photo */
+.hero__bg-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  z-index: 0;
+  display: block;
+}
+
+/* Dark overlay so text stays readable on photo */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.52);
+  z-index: 1;
+}
+
+/* Subtle dot texture on top of overlay for depth */
 .hero::after {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(212,169,106,0.055) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(212,169,106,0.04) 1px, transparent 1px);
   background-size: 28px 28px;
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
 }
 
 /* Wheat accent bar at bottom */
@@ -582,31 +602,7 @@ p {
   gap: 1rem;
 }
 
-/* Diagonal right panel */
-.hero__image-placeholder {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 47%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  z-index: 2;
-  background: linear-gradient(155deg, var(--saddle) 0%, #2C1E0E 100%);
-  clip-path: polygon(14% 0, 100% 0, 100% 100%, 0% 100%);
-}
-
-.hero__image-placeholder svg {
-  width: 72%;
-  max-width: 340px;
-  opacity: 0.28;
-  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
-}
-
 @media (max-width: 767px) {
-  .hero__image-placeholder { display: none; }
   .hero { min-height: 480px; }
   .hero__inner { padding: 3.5rem 1.5rem 4.5rem; }
 }
@@ -912,33 +908,46 @@ p {
    ============================================================ */
 
 .page-hero {
-  background: var(--bark);
-  padding: 4.5rem 1.5rem 4rem;
+  background: var(--bark); /* fallback */
+  padding: 5rem 1.5rem 4.5rem;
   border-bottom: 4px solid var(--wheat);
   position: relative;
   overflow: hidden;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
 }
 
-/* Dot texture */
-.page-hero::before {
-  content: '';
+/* Full-bleed background photo */
+.page-hero__bg {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(212,169,106,0.05) 1px, transparent 1px);
-  background-size: 28px 28px;
-  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 50%;
+  z-index: 0;
+  display: block;
 }
 
-/* Warm diagonal accent panel */
+/* Dark overlay for text legibility */
+.page-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.58);
+  z-index: 1;
+}
+
+/* Wheat gradient reinforcement at bottom edge */
 .page-hero::after {
   content: '';
   position: absolute;
-  top: 0;
+  bottom: 0;
+  left: 0;
   right: 0;
-  width: 38%;
-  height: 100%;
-  background: linear-gradient(155deg, rgba(92,74,42,0.38) 0%, transparent 65%);
-  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+  height: 80px;
+  background: linear-gradient(to top, rgba(59,48,34,0.5) 0%, transparent 100%);
+  z-index: 2;
   pointer-events: none;
 }
 
@@ -946,7 +955,8 @@ p {
   max-width: var(--max-width);
   margin: 0 auto;
   position: relative;
-  z-index: 1;
+  z-index: 3;
+  width: 100%;
 }
 
 .page-hero h1 {
@@ -955,7 +965,7 @@ p {
 }
 
 .page-hero p {
-  color: rgba(255,255,255,0.68);
+  color: rgba(255,255,255,0.75);
   font-size: 1.1rem;
   max-width: 580px;
 }
@@ -991,29 +1001,28 @@ p {
 }
 
 .service-block__visual {
-  background: linear-gradient(145deg, var(--linen-dark) 0%, var(--linen) 100%);
   border-radius: var(--radius-md);
-  min-height: 260px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 5.5rem;
-  border: 1px solid var(--border);
+  min-height: 300px;
   position: relative;
   overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--linen-dark); /* fallback if photo fails */
 }
 
-/* Corner wheat accent */
-.service-block__visual::after {
-  content: '';
+/* Real photo inside service block visual */
+.service-block__visual img {
   position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 90px;
-  height: 90px;
-  background: var(--wheat);
-  opacity: 0.1;
-  border-top-left-radius: 90px;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.service-block:hover .service-block__visual img {
+  transform: scale(1.03);
 }
 
 .service-block h3 { color: var(--bark); margin-bottom: 0.75rem; }
