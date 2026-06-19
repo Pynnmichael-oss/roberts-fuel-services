@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700;900&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -52,7 +52,7 @@
 
             <!-- Phone — 24/7 emphasis -->
             <div class="contact-info__item">
-              <span class="contact-info__icon">📞</span>
+              <span class="contact-info__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.96 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.92 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
               <div>
                 <div class="contact-info__label">Phone &mdash; Available 24/7</div>
                 <div class="contact-info__value" style="font-size:1.3rem;">
@@ -66,7 +66,7 @@
 
             <!-- Email -->
             <div class="contact-info__item">
-              <span class="contact-info__icon">✉️</span>
+              <span class="contact-info__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg></span>
               <div>
                 <div class="contact-info__label">Email</div>
                 <div class="contact-info__value">
@@ -77,7 +77,7 @@
 
             <!-- Location / Area -->
             <div class="contact-info__item">
-              <span class="contact-info__icon">📍</span>
+              <span class="contact-info__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
               <div>
                 <div class="contact-info__label">Service Area</div>
                 <div class="contact-info__value">Oklahoma &amp; Surrounding States</div>
@@ -89,7 +89,7 @@
 
             <!-- Hours -->
             <div class="contact-info__item">
-              <span class="contact-info__icon">🕐</span>
+              <span class="contact-info__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
               <div>
                 <div class="contact-info__label">Dispatch Hours</div>
                 <div class="contact-info__value" style="color:var(--green);">24 / 7 — 365 Days a Year</div>
@@ -214,12 +214,12 @@
 
                 <!-- Success message (shown after submit) -->
                 <div class="form-message form-message--success" id="form-success" role="alert">
-                  ✅ <strong>Message sent!</strong> We'll be in touch shortly. For immediate needs, call us at <span id="success-phone"></span>.
+                  <strong>Message sent.</strong> We'll be in touch shortly. For immediate needs, call us at <span id="success-phone"></span>.
                 </div>
 
                 <!-- Error message (shown on failure) -->
                 <div class="form-message form-message--error" id="form-error" role="alert">
-                  ⚠️ Something went wrong. Please try again or call us directly.
+                  Something went wrong. Please try again or call us directly.
                 </div>
 
               </form>
@@ -300,7 +300,7 @@
       });
 
       if (!valid) {
-        errorMsg.textContent = "⚠️ Please fill in all required fields before submitting.";
+        errorMsg.textContent = "Please fill in all required fields before submitting.";
         errorMsg.style.display = "block";
         return;
       }
@@ -319,7 +319,7 @@
           if (response.ok) {
             form.reset();
             successMsg.style.display = "block";
-            submitBtn.textContent    = "Message Sent ✓";
+            submitBtn.textContent    = "Message Sent";
             // Scroll to success message
             successMsg.scrollIntoView({ behavior: "smooth", block: "nearest" });
           } else {
