@@ -171,7 +171,7 @@
           <div class="footer__contact-item">
             Oklahoma &amp; Surrounding States
           </div>
-          <div class="footer__contact-item" style="margin-top:0.75rem; color: var(--wheat); font-weight:600;">
+          <div class="footer__contact-item" style="margin-top:0.75rem; color: var(--orange); font-weight:600;">
             Available 24 / 7 &mdash; 365 days a year
           </div>
         </div>

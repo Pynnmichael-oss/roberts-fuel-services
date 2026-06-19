@@ -60,7 +60,7 @@
           <div class="about-owner__bio">
             <span class="eyebrow">Owner &amp; Operator</span>
             <h3 id="owner-name"><!-- injected --></h3>
-            <p id="owner-title" style="color:var(--muted);font-weight:600;margin-bottom:1rem;margin-top:0.2rem;"><!-- injected --></p>
+            <p id="owner-title" style="color:var(--text-muted);font-weight:600;margin-bottom:1rem;margin-top:0.2rem;"><!-- injected --></p>
             <div id="owner-bio-paragraphs"><!-- injected --></div>
           </div>
 
@@ -73,7 +73,7 @@
          ======================================================== -->
     <section class="credentials section" aria-label="Credentials and licensing">
       <div class="container">
-        <span class="eyebrow" style="color:var(--wheat);">Licensed &amp; Compliant</span>
+        <span class="eyebrow" style="color:var(--orange);">Licensed &amp; Compliant</span>
         <h2>Credentials &amp; Qualifications</h2>
         <ul class="credential-list" id="credential-list">
           <!-- injected by JS -->
@@ -98,7 +98,7 @@
 
         <div style="margin-top:2.5rem; text-align:center;">
           <a href="services.html" class="btn btn--green" style="margin-right:0.75rem;">View Coverage Map</a>
-          <a href="contact.html" class="btn" style="border:2px solid var(--saddle);color:var(--saddle);background:transparent;">Request a Quote</a>
+          <a href="contact.html" class="btn" style="border:2px solid var(--slate-mid);color:var(--slate-mid);background:transparent;">Request a Quote</a>
         </div>
       </div>
     </section>
@@ -141,7 +141,7 @@
       const p = document.createElement("p");
       p.textContent = para;
       p.style.marginBottom = "0.85rem";
-      p.style.color = "var(--muted)";
+      p.style.color = "var(--text-muted)";
       bioContainer.appendChild(p);
     });
 
@@ -159,9 +159,9 @@
       const isPrimary = s.tier === "primary";
       const card = document.createElement("div");
       card.className = "card";
-      card.style.borderTop = "3px solid " + (isPrimary ? "var(--green)" : "var(--green-lt)");
+      card.style.borderTop = "3px solid " + (isPrimary ? "var(--orange)" : "var(--orange-mid)");
       card.innerHTML =
-        '<div class="card__title" style="color:var(--bark);">' + s.label + '</div>' +
+        '<div class="card__title" style="color:var(--slate-dark);">' + s.label + '</div>' +
         '<p class="card__desc">' + s.note + '</p>';
       coverageCards.appendChild(card);
     });
