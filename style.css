@@ -1268,6 +1268,26 @@ p {
   .contact-layout { grid-template-columns: 1fr 1.65fr; }
 }
 
+/* Tip / note box (contact page) */
+.tip-box {
+  background: var(--linen-dark);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--wheat);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.tip-box__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bark);
+  margin-bottom: 0.5rem;
+}
+
 /* Forms */
 .form-group { margin-bottom: 1.25rem; }
 
