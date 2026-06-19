@@ -95,19 +95,8 @@ const SITE_CONFIG = {
   // ----------------------------------------------------------
   services: [
     {
-      icon:        "🚛",
       title:       "Bulk Fuel Delivery",
       description: "On-site delivery of diesel, gasoline, and specialty fuels to job sites, farms, fleets, and commercial operations anywhere in our coverage area."
-    },
-    {
-      icon:        "⚡",
-      title:       "Emergency Dispatch",
-      description: "24/7 emergency fuel dispatch when you can't afford downtime. We answer the phone and roll a truck — any time, any day."
-    },
-    {
-      icon:        "📋",
-      title:       "Scheduled Programs",
-      description: "Set a regular delivery cadence and never track fuel levels again. Automatic top-off schedules customized to your operation."
     }
   ],
 
