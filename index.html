@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Roberts Fuel Services — reliable 24/7 fuel delivery and transport across Oklahoma and surrounding states. Request a quote today." />
+  <title>Roberts Fuel Services | 24/7 Fuel Delivery — Oklahoma</title>
+
+  <!-- Google Fonts: Barlow Condensed (display) + Source Sans 3 (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========================================================
+       24/7 AVAILABILITY BAR (injected by shared.js)
+       ======================================================== -->
+  <div id="avail-bar" class="avail-bar" role="banner"></div>
+
+  <!-- ========================================================
+       NAVIGATION (injected by shared.js)
+       ======================================================== -->
+  <header id="site-nav" class="nav"></header>
+
+  <main>
+
+    <!-- ========================================================
+         HERO
+         ======================================================== -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero__inner">
+        <span class="hero__eyebrow">Oklahoma &amp; Surrounding States</span>
+        <h1 class="hero__title" id="hero-title">
+          <!-- populated by JS from config.js -->
+        </h1>
+        <p class="hero__sub" id="hero-sub">
+          <!-- populated by JS -->
+        </p>
+        <div class="hero__ctas">
+          <a href="contact.html" class="btn btn--primary">Request a Quote</a>
+          <a href="#" class="btn btn--secondary" id="hero-phone-btn">Call Us Now</a>
+        </div>
+      </div>
+
+      <!-- Decorative truck illustration placeholder -->
+      <div class="hero__image-placeholder" aria-hidden="true">
+        <!-- Fuel tanker truck silhouette — decorative only -->
+        <svg viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:80%;max-width:360px;opacity:0.22;">
+          <!-- Tanker body (elliptical tank) -->
+          <ellipse cx="148" cy="82" rx="118" ry="38" fill="white"/>
+          <!-- Tank highlight stripe -->
+          <ellipse cx="148" cy="72" rx="110" ry="10" fill="#D4A96A" opacity="0.6"/>
+          <!-- Tank end caps -->
+          <ellipse cx="30" cy="82" rx="18" ry="38" fill="white" opacity="0.85"/>
+          <ellipse cx="266" cy="82" rx="18" ry="38" fill="white" opacity="0.85"/>
+          <!-- Frame / chassis rail -->
+          <rect x="12" y="114" width="258" height="10" rx="3" fill="white"/>
+          <!-- Cab body -->
+          <rect x="270" y="56" width="42" height="68" rx="5" fill="white"/>
+          <!-- Cab roof -->
+          <rect x="268" y="44" width="46" height="18" rx="4" fill="white" opacity="0.9"/>
+          <!-- Windshield -->
+          <rect x="276" y="60" width="30" height="22" rx="3" fill="#D4A96A" opacity="0.5"/>
+          <!-- Cab door line -->
+          <line x1="290" y1="78" x2="290" y2="118" stroke="#5C4A2A" stroke-width="1.5" opacity="0.4"/>
+          <!-- Exhaust stack -->
+          <rect x="273" y="26" width="7" height="24" rx="3" fill="white" opacity="0.8"/>
+          <ellipse cx="276.5" cy="26" rx="5" ry="3" fill="white" opacity="0.6"/>
+          <!-- Front bumper -->
+          <rect x="308" y="108" width="8" height="16" rx="2" fill="white" opacity="0.7"/>
+          <!-- Headlight -->
+          <rect x="309" y="72" width="7" height="10" rx="2" fill="#D4A96A" opacity="0.8"/>
+          <!-- Wheels - rear axle dual -->
+          <circle cx="60"  cy="128" r="20" fill="white"/>
+          <circle cx="60"  cy="128" r="11" fill="#3B3022" opacity="0.6"/>
+          <circle cx="60"  cy="128" r="5"  fill="white" opacity="0.7"/>
+          <circle cx="102" cy="128" r="20" fill="white"/>
+          <circle cx="102" cy="128" r="11" fill="#3B3022" opacity="0.6"/>
+          <circle cx="102" cy="128" r="5"  fill="white" opacity="0.7"/>
+          <!-- Wheels - mid axle -->
+          <circle cx="168" cy="128" r="20" fill="white"/>
+          <circle cx="168" cy="128" r="11" fill="#3B3022" opacity="0.6"/>
+          <circle cx="168" cy="128" r="5"  fill="white" opacity="0.7"/>
+          <!-- Wheels - cab steer axle -->
+          <circle cx="286" cy="128" r="18" fill="white"/>
+          <circle cx="286" cy="128" r="10" fill="#3B3022" opacity="0.6"/>
+          <circle cx="286" cy="128" r="4"  fill="white" opacity="0.7"/>
+          <!-- Hazmat placard -->
+          <rect x="22" y="70" width="16" height="16" rx="1" fill="#D4A96A" opacity="0.9"/>
+          <text x="30" y="82" text-anchor="middle" font-size="7" fill="white" font-weight="bold" font-family="Arial">FL</text>
+          <!-- Valve / pipe detail -->
+          <rect x="130" y="118" width="40" height="5" rx="2" fill="white" opacity="0.5"/>
+          <circle cx="150" cy="120" r="4" fill="white" opacity="0.7"/>
+        </svg>
+      </div>
+
+      <div class="hero__accent-bar"></div>
+    </section>
+
+    <!-- ========================================================
+         SERVICES OVERVIEW CARDS
+         ======================================================== -->
+    <section class="service-cards section" aria-label="Our services">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">What We Deliver</span>
+          <h2>Fuel Services Built for Your Operation</h2>
+          <p>Whether you run a fleet, job site, or commercial facility — we deliver the fuel you need, on your schedule.</p>
+        </div>
+        <div class="grid-3" id="service-cards-grid">
+          <!-- populated by JS -->
+        </div>
+        <div style="margin-top:2rem; text-align:center;">
+          <a href="services.html" class="btn btn--green">View All Services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         WHY CHOOSE US — STAT ROW
+         ======================================================== -->
+    <section class="why-section section" aria-label="Why choose us">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Why Roberts Fuel Services</span>
+          <h2>The Partner Large Operators Trust</h2>
+          <p>We built this company on one standard: show up, on time, every time.</p>
+        </div>
+        <div class="stat-grid" id="stat-grid">
+          <!-- populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         24/7 CTA BAND
+         ======================================================== -->
+    <section class="cta-band" aria-label="Call to action">
+      <div class="cta-band__inner">
+        <span class="eyebrow" style="color:rgba(255,255,255,0.6);">Available Right Now</span>
+        <h2>Need Fuel? We Answer the Phone.</h2>
+        <p>24/7 dispatch means a real person picks up — not a recording. Call us any time and we'll get a truck rolling.</p>
+        <a href="#" class="cta-band__phone" id="cta-phone"><!-- phone injected --></a>
+        <a href="contact.html" class="btn btn--primary">Request a Quote Online</a>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         CONTACT TEASER
+         ======================================================== -->
+    <section class="contact-teaser section" aria-label="Contact teaser">
+      <div class="container contact-teaser__inner">
+        <div>
+          <span class="eyebrow">Get in Touch</span>
+          <h2>Ready to Talk Fuel?</h2>
+          <p>Fill out our quick quote form and we'll get back to you fast — or call us now for immediate dispatch.</p>
+          <div class="contact-teaser__actions">
+            <a href="contact.html" class="btn btn--green">Request a Quote</a>
+            <a href="contact.html" class="btn" style="border:2px solid var(--saddle); color:var(--saddle); background:transparent;">Contact Page</a>
+          </div>
+        </div>
+        <div>
+          <!-- Mini info panel -->
+          <div class="contact-card">
+            <span class="eyebrow" style="color:var(--muted);">Reach Us Directly</span>
+            <div class="contact-info__item">
+              <span class="contact-info__icon">📞</span>
+              <div>
+                <div class="contact-info__label">Phone &mdash; 24/7</div>
+                <div class="contact-info__value"><a id="teaser-phone" href="#"><!-- injected --></a></div>
+              </div>
+            </div>
+            <div class="contact-info__item">
+              <span class="contact-info__icon">✉️</span>
+              <div>
+                <div class="contact-info__label">Email</div>
+                <div class="contact-info__value"><a id="teaser-email" href="#"><!-- injected --></a></div>
+              </div>
+            </div>
+            <div class="contact-info__item">
+              <span class="contact-info__icon">📍</span>
+              <div>
+                <div class="contact-info__label">Service Area</div>
+                <div class="contact-info__value">Oklahoma &amp; Surrounding States</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================
+       FOOTER (injected by shared.js)
+       ======================================================== -->
+  <footer id="site-footer" class="footer"></footer>
+
+  <!-- Scripts: config first, then shared, then page-specific -->
+  <script src="config.js"></script>
+  <script src="shared.js"></script>
+  <script>
+    // Initialize shared elements (nav, footer, avail bar)
+    initSite();
+
+    // --------------------------------------------------------
+    // Populate page content from SITE_CONFIG
+    // --------------------------------------------------------
+    const cfg = window.SITE_CONFIG;
+
+    // Hero
+    document.getElementById("hero-title").innerHTML =
+      cfg.tagline.replace(/(Oklahoma)/i, "<em>$1</em>");
+    document.getElementById("hero-sub").textContent = cfg.subTagline;
+    document.getElementById("hero-phone-btn").href = "tel:" + cfg.phoneRaw;
+    document.getElementById("hero-phone-btn").textContent = "Call " + cfg.phone;
+
+    // CTA band phone
+    const ctaPhone = document.getElementById("cta-phone");
+    ctaPhone.href        = "tel:" + cfg.phoneRaw;
+    ctaPhone.textContent = cfg.phone;
+
+    // Teaser contact info
+    const tp = document.getElementById("teaser-phone");
+    tp.href        = "tel:" + cfg.phoneRaw;
+    tp.textContent = cfg.phone;
+
+    const te = document.getElementById("teaser-email");
+    te.href        = "mailto:" + cfg.email;
+    te.textContent = cfg.email;
+
+    // --------------------------------------------------------
+    // Service Cards
+    // --------------------------------------------------------
+    const grid = document.getElementById("service-cards-grid");
+    cfg.services.forEach(function (s) {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <div class="card__icon">${s.icon}</div>
+        <div class="card__title">${s.title}</div>
+        <p class="card__desc">${s.description}</p>
+      `;
+      grid.appendChild(card);
+    });
+
+    // --------------------------------------------------------
+    // Why Choose Us Stats
+    // --------------------------------------------------------
+    const statGrid = document.getElementById("stat-grid");
+    cfg.whyChooseUs.forEach(function (w) {
+      const card = document.createElement("div");
+      card.className = "stat-card";
+      card.innerHTML = `
+        <div class="stat-card__number">${w.stat}</div>
+        <div class="stat-card__label">${w.label}</div>
+        <p class="stat-card__detail">${w.detail}</p>
+      `;
+      statGrid.appendChild(card);
+    });
+  </script>
+
+</body>
+</html>
