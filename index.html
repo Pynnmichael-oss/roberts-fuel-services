@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700;900&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -69,20 +69,6 @@
     </section>
 
     <!-- ========================================================
-         WHY CHOOSE US — STAT ROW
-         ======================================================== -->
-    <section class="why-section section" aria-label="Why choose us">
-      <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">Why Roberts Fuel Services</span>
-          <h2>The Partner Large Operators Trust</h2>
-          <p>We built this company on one standard: show up, on time, every time.</p>
-        </div>
-        <div class="stat-grid" id="stat-grid"></div>
-      </div>
-    </section>
-
-    <!-- ========================================================
          24/7 CTA BAND
          ======================================================== -->
     <section class="cta-band" aria-label="Call to action">
@@ -95,54 +81,6 @@
       </div>
     </section>
 
-    <!-- ========================================================
-         CONTACT TEASER
-         ======================================================== -->
-    <section class="contact-teaser section" aria-label="Contact teaser">
-      <div class="container contact-teaser__inner">
-
-        <div>
-          <span class="eyebrow">Get in Touch</span>
-          <h2>Ready to Talk Fuel?</h2>
-          <p>Fill out our quick quote form and we'll get back to you fast — or call us now for immediate dispatch.</p>
-          <div class="contact-teaser__actions">
-            <a href="contact.html" class="btn btn--green">Request a Quote</a>
-            <a href="contact.html" class="btn btn--outline-dark">Contact Page</a>
-          </div>
-        </div>
-
-        <div>
-          <div class="contact-card">
-            <span class="eyebrow" style="color:var(--muted);">Reach Us Directly</span>
-
-            <div class="contact-info__item">
-              <span class="contact-info__icon">📞</span>
-              <div>
-                <div class="contact-info__label">Phone &mdash; 24/7</div>
-                <div class="contact-info__value"><a id="teaser-phone" href="#"><!-- injected --></a></div>
-              </div>
-            </div>
-
-            <div class="contact-info__item">
-              <span class="contact-info__icon">✉️</span>
-              <div>
-                <div class="contact-info__label">Email</div>
-                <div class="contact-info__value"><a id="teaser-email" href="#"><!-- injected --></a></div>
-              </div>
-            </div>
-
-            <div class="contact-info__item">
-              <span class="contact-info__icon">📍</span>
-              <div>
-                <div class="contact-info__label">Service Area</div>
-                <div class="contact-info__value">Oklahoma &amp; Surrounding States</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
 
   </main>
 
@@ -167,37 +105,16 @@
     ctaPhone.href          = "tel:" + cfg.phoneRaw;
     ctaPhone.textContent   = cfg.phone;
 
-    // Teaser contact info
-    const tp   = document.getElementById("teaser-phone");
-    tp.href    = "tel:" + cfg.phoneRaw;
-    tp.textContent = cfg.phone;
-
-    const te   = document.getElementById("teaser-email");
-    te.href    = "mailto:" + cfg.email;
-    te.textContent = cfg.email;
-
     // Service cards
     const grid = document.getElementById("service-cards-grid");
     cfg.services.forEach(function (s) {
       const card = document.createElement("div");
       card.className = "card";
       card.innerHTML =
-        '<div class="card__icon">' + s.icon + '</div>' +
         '<div class="card__title">' + s.title + '</div>' +
-        '<p class="card__desc">'    + s.description + '</p>';
+        '<p class="card__desc">'    + s.description + '</p>' +
+        '<a href="services.html" class="card__link">Learn more</a>';
       grid.appendChild(card);
-    });
-
-    // Why Choose Us stats
-    const statGrid = document.getElementById("stat-grid");
-    cfg.whyChooseUs.forEach(function (w) {
-      const card = document.createElement("div");
-      card.className = "stat-card";
-      card.innerHTML =
-        '<div class="stat-card__number">' + w.stat   + '</div>' +
-        '<div class="stat-card__label">'  + w.label  + '</div>' +
-        '<p class="stat-card__detail">'   + w.detail + '</p>';
-      statGrid.appendChild(card);
     });
   </script>
 
