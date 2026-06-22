@@ -1494,6 +1494,112 @@ p {
 }
 
 /* ============================================================
+   COVERAGE MAP SCROLL WRAPPER
+   ============================================================ */
+
+.map-scroll-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.map-mobile-hint {
+  display: none;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 0.75rem;
+  font-style: italic;
+}
+
+/* ============================================================
+   MOBILE  ≤ 639px
+   ============================================================ */
+
+@media (max-width: 639px) {
+
+  /* Section padding */
+  :root      { --section-pad: 2.5rem 1.25rem; }
+  .container { padding: 0 1rem; }
+  .cta-band  { padding: 3rem 1.25rem; }
+  .footer    { padding: 2.5rem 1.25rem 1.5rem; }
+
+  /* Typography */
+  h1           { font-size: 2.2rem; }
+  .hero__sub   { font-size: 1rem; }
+  .page-hero p { font-size: 0.95rem; }
+
+  /* Availability bar — center when it wraps */
+  .avail-bar__inner { justify-content: center; }
+  .avail-bar__text  { font-size: 0.73rem; }
+  .avail-bar__phone { font-size: 0.82rem; }
+
+  /* Hero */
+  .page-hero   { padding: 2rem 1.25rem; }
+  .hero__inner { padding: 2.5rem 1.25rem 3rem; }
+  .hero__ctas  { flex-direction: column; }
+  .hero__ctas .btn { width: 100%; }
+
+  /* Buttons — universal min tap target; solo CTAs full-width */
+  .btn           { min-height: 48px; }
+  .cta-band .btn { display: block; width: 100%; max-width: 340px; margin-left: auto; margin-right: auto; }
+
+  /* Service cards */
+  .card { padding: 1.5rem 1.25rem; }
+
+  /* Footer — single column with dividers */
+  .footer__grid                { gap: 0; }
+  .footer__grid > *            { padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .footer__grid > * + *        { padding-top: 1.5rem; }
+  .footer__grid > *:last-child { border-bottom: none; padding-bottom: 0; }
+  .footer__brand-name          { font-size: 1.8rem; }
+
+  /* Nav links — 2-column grid in footer */
+  .footer__links    { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .footer__links li { margin-bottom: 0.4rem; }
+
+  /* Contact phone — orange and prominent */
+  .footer__contact-item--phone a {
+    color: var(--orange) !important;
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+  }
+
+  /* Bottom bar — centered, stacked */
+  .footer__bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    padding-top: 1.5rem;
+  }
+
+  /* Contact form — full-width inputs with adequate tap height */
+  .form-group input,
+  .form-group select,
+  .form-group textarea { min-height: 48px; }
+
+  /* Coverage map — horizontal scroll on small screens */
+  .map-scroll-wrap              { margin: 0 -1rem; }
+  .map-scroll-wrap .map-wrapper { min-width: 500px; }
+  .map-mobile-hint              { display: block; }
+}
+
+/* ============================================================
+   MOBILE LAYOUT REFLOW  ≤ 767px
+   ============================================================ */
+
+@media (max-width: 767px) {
+  /* About page photo — center above bio instead of left-floating */
+  .about-owner__photo {
+    width: 100%;
+    max-width: 220px;
+    margin: 0 auto;
+  }
+}
+
+/* ============================================================
    PRINT
    ============================================================ */
 

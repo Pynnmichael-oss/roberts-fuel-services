@@ -162,7 +162,7 @@
         <!-- Contact column -->
         <div>
           <div class="footer__col-title">Contact</div>
-          <div class="footer__contact-item">
+          <div class="footer__contact-item footer__contact-item--phone">
             <a href="tel:${cfg.phoneRaw}">${cfg.phone}</a>
           </div>
           <div class="footer__contact-item">
