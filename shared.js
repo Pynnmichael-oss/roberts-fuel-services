@@ -142,7 +142,7 @@
         <div class="footer__brand">
           <div class="footer__brand-name">${cfg.businessName}</div>
           <div class="footer__brand-tag">24/7 Fuel Delivery &amp; Transport</div>
-          <p style="font-size:0.88rem; line-height:1.6;">
+          <p class="footer__brand-desc" style="font-size:0.88rem; line-height:1.6;">
             Serving Oklahoma and surrounding states with reliable,
             around-the-clock fuel delivery you can count on.
           </p>
