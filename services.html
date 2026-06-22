@@ -95,21 +95,24 @@
           <p>Hover over a highlighted state to see coverage details. Oklahoma is our home base with full statewide availability.</p>
         </div>
 
-        <div class="map-wrapper">
-          <svg
-            id="coverage-map"
-            viewBox="0 0 960 600"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-label="Interactive US coverage map — hover highlighted states to see coverage details"
-            role="img"
-            style="width:100%;display:block;"
-          ></svg>
+        <div class="map-scroll-wrap">
+          <div class="map-wrapper">
+            <svg
+              id="coverage-map"
+              viewBox="0 0 960 600"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-label="Interactive US coverage map — hover highlighted states to see coverage details"
+              role="img"
+              style="width:100%;display:block;"
+            ></svg>
 
-          <!-- Info bar below the map — updates on hover -->
-          <div class="map-info-bar" id="map-info-bar" role="status" aria-live="polite">
-            <span class="map-info-bar__note">Hover over a highlighted state to see coverage details</span>
+            <!-- Info bar below the map — updates on hover -->
+            <div class="map-info-bar" id="map-info-bar" role="status" aria-live="polite">
+              <span class="map-info-bar__note">Hover over a highlighted state to see coverage details</span>
+            </div>
           </div>
         </div>
+        <p class="map-mobile-hint">Rotate device for best map experience</p>
 
         <!-- Legend -->
         <div class="map-legend">
