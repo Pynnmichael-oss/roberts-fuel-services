@@ -69,6 +69,35 @@
     </section>
 
     <!-- ========================================================
+         REVIEWS — WHAT OUR PARTNERS SAY
+         (static placeholder content from config.js — future:
+          live Google Reviews feed)
+         ======================================================== -->
+    <section class="reviews section" aria-label="Customer reviews">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Testimonials</span>
+          <h2>What Our Partners Say</h2>
+          <p>Fleet managers, dispatchers, and site operators across the region count on us to keep them running.</p>
+        </div>
+
+        <div class="reviews-carousel">
+          <button class="reviews-nav reviews-nav--prev" id="reviews-prev" aria-label="Previous reviews" aria-controls="reviews-track">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+
+          <div class="reviews-track" id="reviews-track" tabindex="0" role="group" aria-label="Customer reviews carousel — scroll or swipe to see more">
+            <!-- review cards injected by JS from config.js -->
+          </div>
+
+          <button class="reviews-nav reviews-nav--next" id="reviews-next" aria-label="Next reviews" aria-controls="reviews-track">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
          24/7 CTA BAND
          ======================================================== -->
     <section class="cta-band cta-band--split" aria-label="Call to action">
@@ -120,6 +149,71 @@
         '<a href="services.html" class="card__link">Learn more</a>';
       grid.appendChild(card);
     });
+
+    // --------------------------------------------------------
+    // Reviews carousel — scroll-snap track built from
+    // cfg.reviews (static placeholders; future Google Reviews)
+    // --------------------------------------------------------
+    (function () {
+      const track   = document.getElementById("reviews-track");
+      const prevBtn = document.getElementById("reviews-prev");
+      const nextBtn = document.getElementById("reviews-next");
+      if (!track || !cfg.reviews || !cfg.reviews.length) return;
+
+      function starsHTML(rating) {
+        let html = "";
+        for (let i = 1; i <= 5; i++) {
+          html +=
+            '<span class="review-card__star' +
+            (i <= rating ? " review-card__star--filled" : "") +
+            '" aria-hidden="true">&#9733;</span>';
+        }
+        return html;
+      }
+
+      cfg.reviews.forEach(function (r) {
+        const card = document.createElement("article");
+        card.className = "review-card";
+        card.innerHTML =
+          '<div class="review-card__stars" role="img" aria-label="' + r.rating + ' out of 5 stars">' +
+            starsHTML(r.rating) +
+          '</div>' +
+          '<blockquote class="review-card__quote"></blockquote>' +
+          '<footer class="review-card__meta">' +
+            '<span class="review-card__name"></span>' +
+            '<span class="review-card__company"></span>' +
+          '</footer>';
+        card.querySelector(".review-card__quote").textContent   = "“" + r.quote + "”";
+        card.querySelector(".review-card__name").textContent    = r.name;
+        card.querySelector(".review-card__company").textContent = r.company;
+        track.appendChild(card);
+      });
+
+      // Arrow buttons scroll one card at a time (snap does the rest)
+      function cardStep() {
+        const card = track.querySelector(".review-card");
+        if (!card) return 0;
+        const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+        return card.getBoundingClientRect().width + gap;
+      }
+
+      function scrollByCard(dir) {
+        track.scrollBy({ left: dir * cardStep(), behavior: "smooth" });
+      }
+
+      prevBtn.addEventListener("click", function () { scrollByCard(-1); });
+      nextBtn.addEventListener("click", function () { scrollByCard(1);  });
+
+      // Dim arrows at the ends of the track
+      function updateArrows() {
+        const maxScroll = track.scrollWidth - track.clientWidth;
+        prevBtn.disabled = track.scrollLeft <= 4;
+        nextBtn.disabled = track.scrollLeft >= maxScroll - 4;
+      }
+      track.addEventListener("scroll", updateArrows, { passive: true });
+      window.addEventListener("resize", updateArrows);
+      updateArrows();
+    })();
   </script>
 
 </body>
