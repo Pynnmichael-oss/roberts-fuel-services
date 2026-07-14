@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Contact Roberts Fuel Services — request a fuel delivery quote or call our 24/7 dispatch line. Serving Oklahoma and surrounding states." />
-  <title>Contact | Roberts Fuel Services</title>
+  <meta name="description" content="Contact G&amp;D Dynamic Services — request a fuel delivery quote or call our 24/7 dispatch line. Serving Oklahoma and surrounding states." />
+  <title>Contact | G&amp;D Dynamic Services</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -80,10 +80,10 @@
             <div class="contact-info__item">
               <span class="contact-info__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
               <div>
-                <div class="contact-info__label">Service Area</div>
-                <div class="contact-info__value">Oklahoma &amp; Surrounding States</div>
+                <div class="contact-info__label">Address &amp; Service Area</div>
+                <div class="contact-info__value" id="contact-address"><!-- injected --></div>
                 <div style="font-size:0.85rem;color:var(--text-muted);margin-top:0.3rem;">
-                  TX &bull; KS &bull; MO &bull; AR — contact us to confirm your location.
+                  Serving Oklahoma &amp; surrounding states — TX &bull; KS &bull; MO &bull; AR. Contact us to confirm your location.
                 </div>
               </div>
             </div>
@@ -262,6 +262,8 @@
     const ce = document.getElementById("contact-email");
     ce.href        = "mailto:" + cfg.email;
     ce.textContent = cfg.email;
+
+    document.getElementById("contact-address").textContent = cfg.address;
 
     const ccp = document.getElementById("contact-cta-phone");
     ccp.href        = "tel:" + cfg.phoneRaw;

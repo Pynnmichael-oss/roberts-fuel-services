@@ -1,6 +1,6 @@
 /**
  * ============================================================
- *  ROBERTS FUEL SERVICES — SITE CONFIGURATION
+ *  G&D DYNAMIC SERVICES — SITE CONFIGURATION
  * ============================================================
  *  All editable text, contact info, and coverage map data
  *  lives here. You should never need to edit HTML to update
@@ -15,7 +15,7 @@ const SITE_CONFIG = {
   // ----------------------------------------------------------
   //  BUSINESS IDENTITY
   // ----------------------------------------------------------
-  businessName:   "Roberts Fuel Services",
+  businessName:   "G&D Dynamic Services",
   ownerName:      "Garrison Roberts",
   tagline:        "Reliable Fuel Delivery Across Oklahoma & Beyond",
   subTagline:     "24/7 dispatch. On-time delivery. Built on trust.",
@@ -25,7 +25,9 @@ const SITE_CONFIG = {
   // ----------------------------------------------------------
   phone:          "(832) 361-4766",
   phoneRaw:       "8323614766",          // digits only — used in tel: links
-  email:          "dispatch@robertsfuelservices.com",
+  email:          "Garrisonlroberts@gmail.com",
+  // TODO: append ZIP code once confirmed (intentionally omitted for now)
+  address:        "5111 S Sheridan, Tulsa, OK",
 
   // ----------------------------------------------------------
   //  FORMSPREE  (replace YOUR_FORMSPREE_ID with your form ID)
@@ -38,7 +40,7 @@ const SITE_CONFIG = {
   // ----------------------------------------------------------
   ownerTitle:     "Owner & Operator",
   ownerBio: [
-    "Garrison Roberts founded Roberts Fuel Services with a single mission: give fuel-dependent businesses in Oklahoma a delivery partner they can count on around the clock.",
+    "Garrison Roberts founded G&D Dynamic Services with a single mission: give fuel-dependent businesses in Oklahoma a delivery partner they can count on around the clock.",
     "With years of hands-on experience in fuel transport and logistics across the southern plains, Garrison built this company on the belief that reliability isn't a feature — it's the baseline.",
     "Every load we haul represents a commitment to the operators, contractors, and fleet managers who can't afford a fuel shortage."
   ],

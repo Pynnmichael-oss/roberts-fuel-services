@@ -1,6 +1,6 @@
 /**
  * ============================================================
- *  ROBERTS FUEL SERVICES — SHARED UI BUILDER
+ *  G&D DYNAMIC SERVICES — SHARED UI BUILDER
  * ============================================================
  *  Reads SITE_CONFIG (defined in config.js) and injects:
  *    - Sticky navigation
@@ -167,6 +167,9 @@
           </div>
           <div class="footer__contact-item">
             <a href="mailto:${cfg.email}">${cfg.email}</a>
+          </div>
+          <div class="footer__contact-item">
+            ${cfg.address}
           </div>
           <div class="footer__contact-item">
             Oklahoma &amp; Surrounding States
